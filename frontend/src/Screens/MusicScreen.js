@@ -1,40 +1,63 @@
-import React, { useEffect } from "react";
-import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 export default function MusicScreen() {
+  const [data, setData] = useState({});
+  const [trigger, setTrigger] = useState(false);
   useEffect(() => {
-    axios
-      .get("https://api.radioparadise.com/api/get_block?info=true", {
-        mode: "no-cors",
-      })
-      .then(function (response) {
-        // handle success
-        console.log(response);
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      })
-      .then(function () {
-        // always executed
-      });
-  }, []);
+    /* getNowPlaying(); */
+  }, [trigger]);
+
+  /* const getNowPlaying = () => {
+    const xhr = new XMLHttpRequest();
+    xhr.open(
+      "get",
+      "https://cors-anywhere.herokuapp.com/https://api.radioparadise.com/api/now_playing"
+    );
+
+    xhr.onload = function () {
+      //result = JSON.parse(this.response);
+      console.log(JSON.parse(this.response));
+      setData(JSON.parse(this.response));
+      setInterval(() => {
+        setTrigger(!trigger);
+      }, JSON.parse(this.response).time * 1000);
+    };
+    xhr.send();
+  }; */
   return (
     <div
       style={{
-        height: (window.innerHeight * 4) / 5,
+        height: (window.innerHeight * 7) / 10,
         backgroundColor: "#FCF5C7",
-        diplay: "flex",
+        padding: 10,
+        display: "flex",
         flexDirection: "column",
-        justifyContent: "space-between",
+        justifyContent: "center",
       }}
     >
-      {" "}
-      <img src={"https://img.radioparadise.com/covers/l/B000002V2R.jpg"} />
-      <audio controls autoPlay>
-        <source src="https://audio-geo.radioparadise.com/blocks/chan/0/1/2206437-2206442.m4a" />
-        Your browser does not support the audio element.
-      </audio>
+      <div style={{ textAlign: "center" }}>
+        <h1>{/* {data.title} */} şarkı adı</h1>
+        <h1 style={{ marginTop: 20 }}>{/* {data.artist} */} sanatçı</h1>
+      </div>
+      <div
+        style={{
+          width: "75%",
+          margin: "auto",
+        }}
+      >
+        <img
+          src="https://img.radioparadise.com/covers/l/B07N3S8D5R.jpg" /* data.cover */
+          style={{ height: "100%", width: "100%" }}
+          resizeMode={"cover"}
+          alt="Loading..."
+        />
+      </div>
+      <div style={{ textAlign: "center", margin: 10 }}>
+        <audio controls autoPlay>
+          <source src="http://stream.radioparadise.com/mp3-128" />
+          Your browser does not support the audio element.
+        </audio>
+      </div>
     </div>
   );
 }

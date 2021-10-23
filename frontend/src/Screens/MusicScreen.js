@@ -4,10 +4,10 @@ export default function MusicScreen() {
   const [data, setData] = useState({});
   const [trigger, setTrigger] = useState(false);
   useEffect(() => {
-    /* getNowPlaying(); */
+    getNowPlaying();
   }, [trigger]);
 
-  /* const getNowPlaying = () => {
+  const getNowPlaying = () => {
     const xhr = new XMLHttpRequest();
     xhr.open(
       "get",
@@ -15,7 +15,6 @@ export default function MusicScreen() {
     );
 
     xhr.onload = function () {
-      //result = JSON.parse(this.response);
       console.log(JSON.parse(this.response));
       setData(JSON.parse(this.response));
       setInterval(() => {
@@ -23,7 +22,7 @@ export default function MusicScreen() {
       }, JSON.parse(this.response).time * 1000);
     };
     xhr.send();
-  }; */
+  };
   return (
     <div
       style={{
@@ -36,8 +35,8 @@ export default function MusicScreen() {
       }}
     >
       <div style={{ textAlign: "center" }}>
-        <h1>{/* {data.title} */} şarkı adı</h1>
-        <h1 style={{ marginTop: 20 }}>{/* {data.artist} */} sanatçı</h1>
+        <h1>{data.title}</h1>
+        <h1 style={{ marginTop: 20 }}>{data.artist}</h1>
       </div>
       <div
         style={{
@@ -46,7 +45,7 @@ export default function MusicScreen() {
         }}
       >
         <img
-          src="https://img.radioparadise.com/covers/l/B07N3S8D5R.jpg" /* data.cover */
+          src={data.cover}
           style={{ height: "100%", width: "100%" }}
           resizeMode={"cover"}
           alt="Loading..."

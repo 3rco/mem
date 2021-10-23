@@ -20,6 +20,7 @@ export default function Footer({ setMainScreen }) {
         backgroundColor: "#f3e06a",
         width: "100%",
         height: 75,
+        minHeight: 53,
         alignItems: "center",
       }}
     >
@@ -31,7 +32,7 @@ export default function Footer({ setMainScreen }) {
         }}
       >
         <MdHome
-          size={30}
+          size={27}
           style={{ cursor: "pointer", padding: 5 }}
           color={"yellow"}
           onClick={() => {
@@ -47,7 +48,7 @@ export default function Footer({ setMainScreen }) {
         }}
       >
         <MdMusicNote
-          size={30}
+          size={27}
           style={{ cursor: "pointer", padding: 5 }}
           color={"yellow"}
           onClick={() => {
@@ -63,7 +64,7 @@ export default function Footer({ setMainScreen }) {
         }}
       >
         <MdCameraEnhance
-          size={30}
+          size={27}
           style={{ cursor: "pointer", padding: 5, textAlign: "center" }}
           color={"yellow"}
           onClick={() => {
@@ -80,7 +81,7 @@ export default function Footer({ setMainScreen }) {
         }}
       >
         <MdWeb
-          size={30}
+          size={27}
           style={{ cursor: "pointer", padding: 5 }}
           color={"yellow"}
           onClick={() => {
@@ -96,7 +97,7 @@ export default function Footer({ setMainScreen }) {
         }}
       >
         <MdGamepad
-          size={30}
+          size={27}
           style={{ cursor: "pointer", padding: 5 }}
           color={"yellow"}
           onClick={() => {

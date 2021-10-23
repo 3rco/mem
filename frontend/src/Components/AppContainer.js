@@ -8,7 +8,6 @@ export default function AppContainer({ header, name, url }) {
         borderRadius: 10,
         margin: 10,
         backgroundColor: "#f9eea7",
-        height: 100,
       }}
     >
       <div

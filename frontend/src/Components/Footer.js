@@ -72,23 +72,6 @@ export default function Footer({ setMainScreen }) {
           }}
         />
       </div>
-
-      <div
-        style={{
-          backgroundColor: "orange",
-          border: "solid 1px orange",
-          borderRadius: "50%",
-        }}
-      >
-        <MdWeb
-          size={27}
-          style={{ cursor: "pointer", padding: 5 }}
-          color={"yellow"}
-          onClick={() => {
-            setMainScreen("blog");
-          }}
-        />
-      </div>
       <div
         style={{
           backgroundColor: "orange",
@@ -102,6 +85,22 @@ export default function Footer({ setMainScreen }) {
           color={"yellow"}
           onClick={() => {
             setMainScreen("games");
+          }}
+        />
+      </div>
+      <div
+        style={{
+          backgroundColor: "orange",
+          border: "solid 1px orange",
+          borderRadius: "50%",
+        }}
+      >
+        <MdWeb
+          size={27}
+          style={{ cursor: "pointer", padding: 5 }}
+          color={"yellow"}
+          onClick={() => {
+            setMainScreen("blog");
           }}
         />
       </div>

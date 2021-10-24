@@ -1,9 +1,10 @@
+import { useState } from "react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import AppScreen from "../Screens/AppScreen";
 import MusicScreen from "../Screens/MusicScreen";
+import AboutMeScreen from "./AboutMeScreen";
 
-import { useState } from "react";
 export default function MainScreen() {
   const [mainScreen, setMainScreen] = useState("home");
   return (
@@ -22,6 +23,7 @@ export default function MainScreen() {
         <Navbar />
         {mainScreen === "home" && <AppScreen />}
         {mainScreen === "music" && <MusicScreen />}
+        {mainScreen === "blog" && <AboutMeScreen />}
         {/* {mainScreen === "home" && <Screen />}
         {mainScreen === "music" && <MusicScreen />}
         {mainScreen === "album" && <>album</>}

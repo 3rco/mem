@@ -13,7 +13,7 @@ export default function AboutMeScreen() {
         overflowY: "scroll",
       }}
     >
-      hehe
+      about me
     </div>
   );
 }

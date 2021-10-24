@@ -4,6 +4,7 @@ import Footer from "../Components/Footer";
 import AppScreen from "../Screens/AppScreen";
 import MusicScreen from "../Screens/MusicScreen";
 import AboutMeScreen from "./AboutMeScreen";
+import GameScreen from "./GameScreen";
 
 export default function MainScreen() {
   const [mainScreen, setMainScreen] = useState("home");
@@ -24,6 +25,7 @@ export default function MainScreen() {
         {mainScreen === "home" && <AppScreen />}
         {mainScreen === "music" && <MusicScreen />}
         {mainScreen === "blog" && <AboutMeScreen />}
+        {mainScreen === "games" && <GameScreen/>}
         {/* {mainScreen === "home" && <Screen />}
         {mainScreen === "music" && <MusicScreen />}
         {mainScreen === "album" && <>album</>}

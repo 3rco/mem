@@ -4,6 +4,6 @@ import radioRouter from './radio';
 const router = express.Router();
 
 
-router.use('/radio', radioRouter);
+router.use('/', radioRouter);
 
 export default router;

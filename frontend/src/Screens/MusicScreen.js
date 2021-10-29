@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-
+import axios from 'axios';
 export default function MusicScreen() {
   const [data, setData] = useState({});
   const [trigger, setTrigger] = useState(false);
   useEffect(() => {
-    getNowPlaying();
+    //getNowPlaying();
   }, [trigger]);
 
-  const getNowPlaying = () => {
+  /* const getNowPlaying = () => {
     const xhr = new XMLHttpRequest();
     xhr.open(
       "get",
@@ -15,14 +15,29 @@ export default function MusicScreen() {
     );
 
     xhr.onload = function () {
-      console.log(JSON.parse(this.response));
+      console.log("burra",JSON.parse(this.response));
       setData(JSON.parse(this.response));
       setInterval(() => {
         setTrigger(!trigger);
       }, JSON.parse(this.response).time * 1000);
     };
     xhr.send();
-  };
+  }; */
+
+  axios.get('http://localhost:5000/radio')
+  .then(function (response) {
+    // handle success
+    console.log("succcc",response);
+  })
+  .catch(function (error) {
+    // handle error
+    console.log("err",error);
+  })
+  .then(function (response) {
+    // always executed
+    console.log("always",response)
+  });
+
   return (
     <div
       style={{
